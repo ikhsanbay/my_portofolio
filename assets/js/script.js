@@ -50,7 +50,7 @@ ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 /*===== typed js =====*/
 const typed = new Typed('.multiple-text', {
-    strings: ['Web Developer', 'UI/UX Designer', 'Desainer Grafis', 'Video Editor'],
+    strings: ['Web Developer', 'Back-End Developer', 'Sofware Engineer'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
@@ -61,3 +61,23 @@ const typed = new Typed('.multiple-text', {
 const yearElement = document.getElementById('year');
 const currentYear = new Date().getFullYear();
 yearElement.textContent = currentYear;
+
+/*===== send contact form to WhatsApp =====*/
+const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', event => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const message = [
+        `Nama: ${formData.get('name')}`,
+        `Email: ${formData.get('email')}`,
+        `Nomor telepon: ${formData.get('phone') || '-'}`,
+        `Subjek: ${formData.get('subject')}`,
+        '',
+        `Pesan: ${formData.get('message')}`
+    ].join('\n');
+    const whatsappUrl = `https://wa.me/6282398060605?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+});

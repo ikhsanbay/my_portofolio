@@ -252,9 +252,12 @@ p {
 
 .portfolio-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  gap: 2.5rem;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  grid-auto-rows: 20rem;
+  align-items: stretch;
+  gap: 1.6rem;
+  max-width: 115rem;
+  margin: 0 auto;
 }
 
 .portfolio-container .portfolio-box {
@@ -265,8 +268,14 @@ p {
   display: flex;
 }
 
+.portfolio-featured {
+  grid-row: span 2;
+}
+
 .portfolio-box img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: 0.5s ease;
 }
 
@@ -412,6 +421,13 @@ p {
   .portfolio {
     padding-bottom: 7rem;
   }
+  .portfolio-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 20rem;
+  }
+  .portfolio-featured {
+    grid-row: auto;
+  }
   .contact {
     min-height: auto;
   }
@@ -474,7 +490,7 @@ p {
     margin-bottom: 3rem;
   }
   .portfolio-container {
-    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
   }
 }
 
