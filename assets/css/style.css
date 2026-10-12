@@ -402,6 +402,54 @@ p {
   color: var(--second-bg-color);
 }
 
+.tools {
+  background: var(--bg-color);
+}
+
+.tools h2 {
+  margin-bottom: 4rem;
+}
+
+.tools-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  gap: 1.6rem;
+  max-width: 115rem;
+  margin: 0 auto;
+}
+
+.tools-box {
+  display: flex;
+  min-height: 16rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(0, 238, 255, 0.28);
+  border-radius: 1.8rem;
+  background: rgba(50, 57, 70, 0.72);
+  box-shadow: 0 1rem 2.4rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tools-box:hover {
+  transform: translateY(-0.4rem);
+  border-color: rgba(0, 238, 255, 0.7);
+  box-shadow: 0 1.4rem 2.8rem rgba(0, 0, 0, 0.28);
+}
+
+.tools-box i {
+  color: var(--main-color);
+  font-size: 5rem;
+}
+
+.tools-box h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
 .gallery {
   background: var(--bg-color);
 }
@@ -575,6 +623,9 @@ p {
   .portfolio {
     padding-bottom: 7rem;
   }
+  .tools {
+    padding-bottom: 7rem;
+  }
   .gallery {
     padding-bottom: 7rem;
   }
@@ -643,6 +694,9 @@ p {
   .portfolio h2 {
     margin-bottom: 3rem;
   }
+  .tools h2 {
+    margin-bottom: 3rem;
+  }
   .gallery h2 {
     margin-bottom: 3rem;
   }
@@ -696,11 +750,15 @@ p {
     animation: none;
     transition: none;
   }
+  .tools-box {
+    transition: none;
+  }
 
   .portfolio-container .portfolio-box:hover,
   .portfolio-container .portfolio-box:focus-within,
   .portfolio-box:hover img,
-  .portfolio-layer a:hover {
+  .portfolio-layer a:hover,
+  .tools-box:hover {
     transform: none;
   }
 }
